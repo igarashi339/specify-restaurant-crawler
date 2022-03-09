@@ -199,7 +199,12 @@ def main():
                                                      target_datetime_obj,
                                                      all_restaurant_name,
                                                      can_reserve_restaurant_name_list)
-            update_db(db_handler, target_datetime_obj, cannot_reserve_to_reserve, reserve_to_cannot_reserve)
+            try:
+                update_db(db_handler, target_datetime_obj, cannot_reserve_to_reserve, reserve_to_cannot_reserve)
+            except Exception as e:
+                print("DB更新時にエラーが発生しました")
+                print(e)
+                continue
             try:
                 if len(cannot_reserve_to_reserve) != 0:
                     post_to_media(target_datetime_obj,
