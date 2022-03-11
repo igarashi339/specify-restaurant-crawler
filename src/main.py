@@ -165,6 +165,7 @@ def post_to_media(target_date_obj, cannot_reserve_to_reserve, park_restaurant_li
     url = HOST + path + "?" + param
 
     dt_now_utc_aware = datetime.now(timezone(timedelta(hours=9)))
+    dt_now_utc_aware_str = dt_now_utc_aware.strftime('%Y/%m/%d %H:%M:%S')
     weekday_str = WEEKDAY_LIST[target_date_obj.weekday()]
 
     # パークレストラン、ホテルレストランごとにツイートする
@@ -172,7 +173,8 @@ def post_to_media(target_date_obj, cannot_reserve_to_reserve, park_restaurant_li
     tweet_target_hotel_restaurant_set = set(cannot_reserve_to_reserve) & set(hotel_restaurant_list)
     # 個人的にほしいやつ
     if format(target_date_obj, '%Y/%m/%d') == "2022/03/12" and "シェフ・ミッキー" in tweet_target_hotel_restaurant_set:
-        line_handler.broadcast(f"2022/03/12 シェフミッキー空いてるよ！\n{url}")
+        line_handler.broadcast(f"2022/03/12 シェフミッキー空いてるよ！\n{url}\n"
+                               f"※{dt_now_utc_aware_str}時点の情報")
 
 
 def main():
