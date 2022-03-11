@@ -170,7 +170,7 @@ def post_to_media(target_date_obj, cannot_reserve_to_reserve, park_restaurant_li
     tweet_target_park_restaurant_set = set(cannot_reserve_to_reserve) & set(park_restaurant_list)
     tweet_target_hotel_restaurant_set = set(cannot_reserve_to_reserve) & set(hotel_restaurant_list)
     # 個人的にほしいやつ
-    if format(target_date_obj, '%Y/%m/%d') == "2022/03/12" and "シェフ・ミッキー" in tweet_target_park_restaurant_set:
+    if format(target_date_obj, '%Y/%m/%d') == "2022/03/12" and "シェフ・ミッキー" in tweet_target_hotel_restaurant_set:
         line_handler.broadcast(f"2022/03/12 シェフミッキー空いてるよ！\n{url}")
 
 
