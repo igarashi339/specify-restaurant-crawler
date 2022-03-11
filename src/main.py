@@ -146,7 +146,7 @@ def post_to_media(target_date_obj, cannot_reserve_to_reserve, park_restaurant_li
     メディアに投稿する。
     """
     # ツイートにのせるURLを生成
-    path = "/sp/restaurant/list/"
+    path = "/sp/restaurant/check/"
     target_date_str = target_date_obj.strftime('%Y%m%d')
     param = f"useDate={target_date_str}&" \
             f"mealDivInform=&" \
@@ -157,10 +157,11 @@ def post_to_media(target_date_obj, cannot_reserve_to_reserve, park_restaurant_li
             f"restaurantNameCd=&" \
             f"wheelchairCount=0&" \
             f"stretcherCount=0&" \
+            f"nameCd=RCHM0&" \
+            f"contentsCd=03&" \
             f"showWay=&" \
-            f"reservationStatus=1&" \
-            f"beforeUrl=%2Finternalerror%2F&" \
-            f"wayBack="
+            f"reservationStatus=0"
+
     url = HOST + path + "?" + param
 
     dt_now_utc_aware = datetime.now(timezone(timedelta(hours=9)))
