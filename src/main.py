@@ -29,7 +29,7 @@ def get_target_date_obj_list():
 def fetch_single_date_ticket_info(driver, target_date_obj, line_handler):
     target_url = f"{TARGET_URL}/ticket/search/?parkTicketGroupCd=020&numOfAdult=2&numOfJunior=0&numOfChild=0&parkTicketSalesForm=1&useDays=1&route=1&useDateFrom=20220611&selectParkDay1=01"
     driver.get(target_url)
-    time.sleep(10)
+    time.sleep(9)
     # tdl_str_list = driver.find_elements_by_xpath("//*[@id=\"search-ticket-group\"]/div/section/div[2]/section[1]/div[1]/div/ul/li[1]/span")
     tdl_str_list = driver.find_elements_by_xpath("//*[@id=\"search-ticket-group\"]/div/section/section[1]/div/div[1]/div/ul/li[1]/span")                                   
     tdl_str = tdl_str_list[0].text
