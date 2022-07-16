@@ -8,4 +8,4 @@ down:
 
 .PHONY: exec
 exec:
-	docker-compose exec app python main.py
+	docker-compose exec app python main_restaurant.py

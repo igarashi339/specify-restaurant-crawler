@@ -1,10 +1,8 @@
 import os
 import time
 from datetime import datetime, timezone, timedelta
-from dateutil.relativedelta import relativedelta
 from selenium import webdriver
 from line_handler import LineHandler
-import urllib
 from selenium.webdriver.common.desired_capabilities import DesiredCapabilities
 
 
